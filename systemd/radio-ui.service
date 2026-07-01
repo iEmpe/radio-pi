@@ -1,0 +1,22 @@
+[Unit]
+Description=Radio Pi UI (PyQt kiosk on desktop X11)
+After=network-online.target NetworkManager.service lightdm.service
+Wants=network-online.target NetworkManager.service
+# Uruchom po zalogowaniu na pulpit (lightdm + autologin pi)
+
+[Service]
+Type=simple
+User=pi
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/pi/.Xauthority
+Environment=XDG_RUNTIME_DIR=/run/user/1000
+Environment=PULSE_SERVER=unix:/run/user/1000/pulse/native
+Environment=RADIO_AUDIO_DEVICE=pulse/alsa_output.platform-bcm2835_audio.analog-stereo
+WorkingDirectory=/opt/radio-pi
+ExecStartPre=/bin/sleep 8
+ExecStart=/opt/radio-pi/build/start-ui-desktop.sh
+Restart=on-failure
+RestartSec=8
+
+[Install]
+WantedBy=multi-user.target

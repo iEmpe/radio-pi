@@ -1,0 +1,6 @@
+[Allow pi user WiFi scan]
+Identity=unix-user:pi
+Action=org.freedesktop.NetworkManager.wifi.scan
+ResultAny=yes
+ResultInactive=yes
+ResultActive=yes

@@ -1,0 +1,13 @@
+[Unit]
+Description=Radio Pi emergency hotspot watchdog
+After=network-online.target NetworkManager.service
+Wants=network-online.target NetworkManager.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/radio-pi
+ExecStart=/usr/bin/python3 -m app.network.hotspot_watchdog
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

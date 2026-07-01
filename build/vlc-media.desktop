@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=VLC — pendrive
+Comment=Odtwarzaj filmy i MP3 z pendrive
+Exec=/opt/radio-pi/build/open-usb-media.sh
+Icon=vlc
+Terminal=false
+Categories=AudioVideo;Video;Audio;Player;
+StartupNotify=true

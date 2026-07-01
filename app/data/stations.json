@@ -1,0 +1,218 @@
+[
+  {
+    "name": "UKF UK Bass Radio",
+    "url": "https://www.ukbassradio.com/stream",
+    "country": "United Kingdom",
+    "tags": "ukf,drum and bass,uk bass",
+    "favicon_url": "https://www.ukbassradio.com/favicon.ico",
+    "homepage": "https://www.ukbassradio.com/"
+  },
+  {
+    "name": "Bassdrive",
+    "url": "http://bassdrive.com/bassdrive.m3u",
+    "country": "United States",
+    "tags": "drum and bass,jungle,24/7",
+    "favicon_url": "https://www.bassdrive.com/favicon.ico",
+    "homepage": "https://www.bassdrive.com/"
+  },
+  {
+    "name": "Kool FM",
+    "url": "https://admin.stream.rinse.fm/proxy/kool/stream",
+    "country": "United Kingdom",
+    "tags": "jungle,drum and bass,london",
+    "favicon_url": "https://www.rinse.fm/favicon.ico",
+    "homepage": "https://www.rinse.fm/shows/kool-fm/"
+  },
+  {
+    "name": "DnBRadio",
+    "url": "https://azura.drmnbss.org:8000/radio.mp3",
+    "country": "United States",
+    "tags": "drum and bass,jungle,dj sets",
+    "favicon_url": "https://dnbradio.com/favicon.ico",
+    "homepage": "https://dnbradio.com/"
+  },
+  {
+    "name": "BBC Radio 1",
+    "url": "http://a.files.bbci.co.uk/ms6/live/3441A116-B12E-4D2F-ACA8-C1984642FA4B/audio/simulcast/hls/nonuk/pc_hd_abr_v2/cf/bbc_radio_one.m3u8",
+    "country": "United Kingdom",
+    "tags": "drum and bass,mainstream,bbc",
+    "favicon_url": "https://www.bbc.co.uk/favicon.ico",
+    "homepage": "https://www.bbc.co.uk/sounds/play/live/bbc_radio_one"
+  },
+  {
+    "name": "BBC Radio 1Xtra",
+    "url": "http://as-hls-ww-live.akamaized.net/pool_92079267/live/ww/bbc_1xtra/bbc_1xtra.isml/bbc_1xtra-audio%3d128000.norewind.m3u8",
+    "country": "United Kingdom",
+    "tags": "drum and bass,hip hop,urban,bbc",
+    "favicon_url": "https://www.bbc.co.uk/favicon.ico",
+    "homepage": "https://www.bbc.co.uk/sounds/play/live/bbc_1xtra"
+  },
+  {
+    "name": "DI.FM Drum & Bass",
+    "url": "http://listen.di.fm/public3/drumandbass.pls",
+    "country": "United States",
+    "tags": "drum and bass,electronic,commercial-free",
+    "favicon_url": "https://www.di.fm/favicon.ico",
+    "homepage": "https://www.di.fm/channels/drumandbass"
+  },
+  {
+    "name": "DI.FM Liquid DnB",
+    "url": "http://listen.di.fm/public3/liquiddnb.pls",
+    "country": "United States",
+    "tags": "liquid,drum and bass,vocal",
+    "favicon_url": "https://www.di.fm/favicon.ico",
+    "homepage": "https://www.di.fm/channels/liquiddnb"
+  },
+  {
+    "name": "Different Drumz DnB",
+    "url": "http://differentdrumz.radioca.st/stream",
+    "country": "United Kingdom",
+    "tags": "liquid,soulful,drum and bass",
+    "favicon_url": "https://www.differentdrumz.co.uk/favicon.ico",
+    "homepage": "https://www.differentdrumz.co.uk/"
+  },
+  {
+    "name": "Liqui Radio",
+    "url": "http://stream.zeno.fm/ug59eq099yzuv",
+    "country": "Europe",
+    "tags": "liquid,vocal,drum and bass",
+    "favicon_url": "",
+    "homepage": "https://www.liquiradio.com/"
+  },
+  {
+    "name": "KEXP Seattle",
+    "url": "https://kexp-mp3-128.streamguys1.com/kexp128.mp3",
+    "country": "United States",
+    "tags": "indie, alternative",
+    "favicon_url": "https://www.kexp.org/favicon.ico",
+    "homepage": "https://www.kexp.org/"
+  },
+  {
+    "name": "RMF FM",
+    "url": "http://195.150.20.242:8000/rmf_fm",
+    "country": "Poland",
+    "tags": "fm,rmf,rmffm",
+    "favicon_url": "https://www.rmf.fm/assets/images/favicon/apple-icon-120x120.png?3",
+    "homepage": "https://www.rmf.fm/"
+  },
+  {
+    "name": "Radio 357",
+    "url": "https://n-11-21.dcs.redcdn.pl/sc/o2/radio357/live/radio357_pr.livx?preroll=0",
+    "country": "Poland",
+    "tags": "adult contemporary",
+    "favicon_url": "https://radio357.pl/wp-content/uploads/2022/04/c5399c0d-1b8e-43d5-b23b-e5cef1857856.png",
+    "homepage": "https://radio357.pl/"
+  },
+  {
+    "name": "Radio Zet",
+    "url": "http://zet-net-01.cdn.eurozet.pl:8400/",
+    "country": "Poland",
+    "tags": "",
+    "favicon_url": "https://gfx.radiozet.pl/extension/radiozet/design/standard/images/favicon/apple-touch-icon.png",
+    "homepage": "https://www.radiozet.pl/"
+  },
+  {
+    "name": "SmoothJazz.com.pl 320k MP3",
+    "url": "https://bcast.vigormultimedia.com:48888/sjcompl320mp3",
+    "country": "Poland",
+    "tags": "jazz,smooth jazz",
+    "favicon_url": "http://bcast.vigormultimedia.com:7000/sjcompl_192_192_nie_kasowac.png",
+    "homepage": "https://www.smoothjazz.com.pl/"
+  },
+  {
+    "name": "ESKA ROCK",
+    "url": "https://ic2.smcdn.pl/5380-1.mp3#ESKA_ROCK",
+    "country": "Poland",
+    "tags": "",
+    "favicon_url": "https://static.mytuner.mobi/media/tvos_radios/2LqeyZhdFq.png",
+    "homepage": "https://www.eskarock.pl/"
+  },
+  {
+    "name": "Radio Nowy Świat",
+    "url": "https://go-audio.toya.net.pl/63214",
+    "country": "Poland",
+    "tags": "soft adult contemporary",
+    "favicon_url": "https://dl.memuplay.com/new_market/img/com.thehouseofcode.radio_nowy_swiat.icon.2021-03-20-18-25-39.png",
+    "homepage": "https://nowyswiat.online/"
+  },
+  {
+    "name": "Anty Radio",
+    "url": "https://an.cdn.eurozet.pl/ant-web.mp3?t=1713710188361",
+    "country": "Poland",
+    "tags": "",
+    "favicon_url": "https://gfx-player.radiozet.pl/var/player/storage/images/player-antyradio/programy/antyradio-ekstra/936460-5-pol-PL/Antyradio-Ekstra_size-70x70.png",
+    "homepage": "https://www.antyradio.pl/"
+  },
+  {
+    "name": "TokFM",
+    "url": "https://radiostream.pl/tuba10-1.mp3",
+    "country": "Poland",
+    "tags": "",
+    "favicon_url": "https://static.im-g.pl/im/6/7455/m7455556.gif",
+    "homepage": "https://www.tokfm.pl/"
+  },
+  {
+    "name": "Radio RMF MAXXX",
+    "url": "https://rs9-krk2-cyfronet.rmfstream.pl/RMFMAXXX48",
+    "country": "Poland",
+    "tags": "misc",
+    "favicon_url": "https://cdn.onlineradiobox.com/img/l/4/1294.v9.png",
+    "homepage": ""
+  },
+  {
+    "name": "ESKA - Gorąca 20",
+    "url": "https://waw.ic.smcdn.pl/6130-1.mp3",
+    "country": "Poland",
+    "tags": "dance,pop,pop music,rock",
+    "favicon_url": "https://www.eska.pl/favicon.ico",
+    "homepage": "https://www.eska.pl/goraca20/"
+  },
+  {
+    "name": "VOX FM",
+    "url": "http://www.emsoft.ct8.pl/inne/time.m3u?id=3990",
+    "country": "Poland",
+    "tags": "",
+    "favicon_url": "https://www.voxfm.pl/apple-touch-icon.png",
+    "homepage": "https://www.voxfm.pl/"
+  },
+  {
+    "name": "ESKA GORĄCA 100 ",
+    "url": "http://ic1.smcdn.pl/6120-1.mp3",
+    "country": "Poland",
+    "tags": "trance",
+    "favicon_url": "http://eska.pl/favicon.ico",
+    "homepage": "http://eska.pl/"
+  },
+  {
+    "name": "Chilli Zet",
+    "url": "https://ch.cdn.eurozet.pl/chi-net.mp3",
+    "country": "Poland",
+    "tags": "",
+    "favicon_url": "https://gfx.chillizet.pl/extension/chillizet/design/standard/images/favicon/apple-touch-icon.png",
+    "homepage": "https://www.chillizet.pl/"
+  },
+  {
+    "name": "VOX FM 128",
+    "url": "https://ic2.smcdn.pl/3990-1.mp3",
+    "country": "Poland",
+    "tags": "",
+    "favicon_url": "http://voxfm.pl/apple-touch-icon.png",
+    "homepage": "http://voxfm.pl/"
+  },
+  {
+    "name": "Radio Republika",
+    "url": "https://ssl-1.radiotvrepublika.pl:12698/stream",
+    "country": "Poland",
+    "tags": "news,news talk,politics,talk",
+    "favicon_url": "https://radiotvrepublika.pl/favicon-96x96.png",
+    "homepage": "https://radiotvrepublika.pl/"
+  },
+  {
+    "name": "102.7 KIIS FM",
+    "url": "https://stream.revma.ihrhls.com/zc185",
+    "country": "The United States Of America",
+    "tags": "pop,top 40",
+    "favicon_url": "https://i.iheart.com/v3/re/assets.brands/2ebe753539305728784b0f3b178eae45?ops=new(),flood(%22white%22),swap(),merge(%22over%22),gravity(%22center%22),contain(167,167),quality(80),format(%22png%22)",
+    "homepage": "https://kiisfm.iheart.com/"
+  }
+]

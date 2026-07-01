@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Radio Pi
+Comment=Internetowe radio na Raspberry Pi
+Exec=/opt/radio-pi/build/launch-radio.sh
+Icon=/opt/radio-pi/app/assets/icons/radio-pi.svg
+Terminal=false
+Categories=AudioVideo;Audio;Player;
+StartupNotify=false

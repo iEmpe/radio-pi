@@ -1,0 +1,7 @@
+// Allow user pi to scan WiFi without polkit password prompt (Radio Pi UI).
+polkit.addRule(function(action, subject) {
+    if (subject.user == "pi" &&
+        action.id == "org.freedesktop.NetworkManager.wifi.scan") {
+        return polkit.Result.YES;
+    }
+});

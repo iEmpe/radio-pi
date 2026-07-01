@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+
+# SD images (not in repo)
+*.img
+*.img.xz
+radio-pi-images/
+*.manifest.txt
+
+# Runtime data on Pi
+app/data/history.json
+app/data/last_station.json
