@@ -52,8 +52,8 @@ def main() -> int:
     mock_nm.bluetooth_powered.return_value = True
     mock_nm.bluetooth_connected.return_value = False
     mock_nm.scan_wifi.return_value = [
-        WifiNetwork("wifirifi_2G", 82, True, 6, 2437, True),
-        WifiNetwork("Sasiad_5G", 45, True, 36, 5180, False),
+        WifiNetwork("MojaSieciWiFi", 82, True, 6, 2437, True),
+        WifiNetwork("MojaSieciWiFi", 45, True, 36, 5180, False),
     ]
     eth = MagicMock()
     eth.connected = True
