@@ -4,3 +4,31 @@ Action=org.freedesktop.NetworkManager.wifi.scan
 ResultAny=yes
 ResultInactive=yes
 ResultActive=yes
+
+[Allow pi user network control]
+Identity=unix-user:pi
+Action=org.freedesktop.NetworkManager.network-control
+ResultAny=yes
+ResultInactive=yes
+ResultActive=yes
+
+[Allow pi user modify own connections]
+Identity=unix-user:pi
+Action=org.freedesktop.NetworkManager.settings.modify.own
+ResultAny=yes
+ResultInactive=yes
+ResultActive=yes
+
+[Allow pi user modify system connections]
+Identity=unix-user:pi
+Action=org.freedesktop.NetworkManager.settings.modify.system
+ResultAny=yes
+ResultInactive=yes
+ResultActive=yes
+
+[Allow pi user enable wifi]
+Identity=unix-user:pi
+Action=org.freedesktop.NetworkManager.enable-disable-wifi
+ResultAny=yes
+ResultInactive=yes
+ResultActive=yes

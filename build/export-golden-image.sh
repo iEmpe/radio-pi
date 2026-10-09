@@ -7,11 +7,12 @@
 # Użycie:
 #   sudo OUTPUT_DIR=/media/pi/USB ./build/export-golden-image.sh
 #
-# Pobranie na Mac:
-#   scp pi@<IP>:/home/pi/radio-pi-images/radio-pi-golden-*.img.xz .
-#   scp pi@<IP>:/home/pi/radio-pi-images/radio-pi-golden-*.manifest.txt .
+# Pobranie na Mac (zalecane na Pi 3):
+#   PI_HOST=192.168.0.81 ./build/pull-golden-image-from-mac.sh
+#   → ~/Downloads/radio-pi-golden-*.img.gz
 #
-# Flash: Raspberry Pi Imager → Use custom → wybierz .img.xz (lub rozpakuj xz najpierw)
+# Lub z Pi (wymaga pendrive ≥32 GB):
+#   scp 'pi@<IP>:/home/pi/radio-pi-images/radio-pi-golden-*.img.gz' .
 set -euo pipefail
 
 if [[ "$(id -u)" -ne 0 ]]; then
@@ -24,7 +25,8 @@ PI_HOME="$(getent passwd "$PI_USER" | cut -d: -f6)"
 STAMP="$(date +%Y%m%d-%H%M)"
 OUTPUT_DIR="${OUTPUT_DIR:-$PI_HOME/radio-pi-images}"
 RAW_IMG="$OUTPUT_DIR/radio-pi-golden-${STAMP}.img"
-XZ_IMG="${RAW_IMG}.xz"
+ARCHIVE_IMG="${RAW_IMG}.gz"
+XZ_IMG="$ARCHIVE_IMG"
 MANIFEST="$OUTPUT_DIR/radio-pi-golden-${STAMP}.manifest.txt"
 
 mkdir -p "$OUTPUT_DIR"
@@ -36,19 +38,22 @@ echo "    Cel:        $XZ_IMG"
 echo
 
 AVAIL_KB="$(df -k "$OUTPUT_DIR" | awk 'NR==2 {print $4}')"
-if (( AVAIL_KB < 8000000 )); then
-  echo "WARN: Mało miejsca w $OUTPUT_DIR ($(df -h "$OUTPUT_DIR" | tail -1))"
-  echo "      Zalecane: sudo OUTPUT_DIR=/media/pi/USB $0"
-  read -r -p "Kontynuować mimo to? [y/N] " ans
-  [[ "${ans,,}" == "y" ]] || exit 1
+# Pełny dd mmcblk0 = rozmiar karty (~29 GB); na samej karcie SD brakuje miejsca.
+if (( AVAIL_KB < 32000000 )); then
+  echo "ERROR: Za mało miejsca na eksporcie lokalnym ($(df -h "$OUTPUT_DIR" | tail -1))"
+  echo "       Użyj z Maca: PI_HOST=<ip> ./build/pull-golden-image-from-mac.sh"
+  echo "       Lub pendrive: sudo OUTPUT_DIR=/media/pi/USB $0"
+  exit 1
 fi
 
 echo "==> Zatrzymanie radia (krótko)"
 systemctl stop radio-ui.service 2>/dev/null || true
 sync
 
-echo "==> Zrzut /dev/mmcblk0 + kompresja xz (15–60 min na Pi 3)"
-dd if=/dev/mmcblk0 bs=4M status=progress conv=fsync | xz -9 -T0 > "$XZ_IMG"
+echo "==> Zrzut /dev/mmcblk0 (surowy plik, potem gzip — oszczędnie dla RAM Pi 3)"
+dd if=/dev/mmcblk0 of="$RAW_IMG" bs=4M status=progress conv=fsync
+echo "==> Kompresja gzip"
+gzip -6 -f "$RAW_IMG"
 
 echo "==> Manifest"
 {
@@ -77,11 +82,11 @@ echo "==> Manifest"
   echo "       Zmień hasło pi po sklonowaniu: passwd"
 } | tee "$MANIFEST"
 
-chown "$PI_USER:$PI_USER" "$XZ_IMG" "$MANIFEST" 2>/dev/null || true
+chown "$PI_USER:$PI_USER" "$ARCHIVE_IMG" "$MANIFEST" 2>/dev/null || true
 
 echo "==> Uruchamianie radia"
 systemctl start radio-ui.service 2>/dev/null || true
 
 echo
 echo "Gotowe:"
-ls -lh "$XZ_IMG" "$MANIFEST"
+ls -lh "$ARCHIVE_IMG" "$MANIFEST"

@@ -33,6 +33,23 @@ from app.ui.volume_bar import VolumeBar  # noqa: E402
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
 
+# Okno poza menedżerem, żeby zasłonić monity pulpitu (zasilanie, aktualizacje).
+# Same monity zostają w systemie — widać je po wyjściu z radia.
+_KIOSK_FLAGS = (
+    Qt.FramelessWindowHint
+    | Qt.WindowStaysOnTopHint
+    | Qt.X11BypassWindowManagerHint
+)
+
+
+def present_kiosk(widget) -> None:
+    widget.setWindowFlags(_KIOSK_FLAGS)
+    screen = QApplication.primaryScreen()
+    if screen is not None:
+        widget.setGeometry(screen.geometry())
+    widget.show()
+    widget.raise_()
+
 
 class RadioWindow(QMainWindow):
     def __init__(self) -> None:
@@ -261,19 +278,25 @@ def main() -> int:
     app.setFont(ui_font(FONT_SIZE_SMALL))
 
     splash = SplashScreen()
-    splash.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
-    splash.showFullScreen()
+    present_kiosk(splash)
     app.processEvents()
 
     window_holder: list[RadioWindow | None] = [None]
 
     def open_main_window(_ok: int, _total: int) -> None:
         window_holder[0] = RadioWindow()
-        window_holder[0].setWindowFlags(
-            Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint
-        )
-        window_holder[0].showFullScreen()
+        present_kiosk(window_holder[0])
         splash.close()
+
+    def _cover_os_notices() -> None:
+        target = window_holder[0] if window_holder[0] is not None else splash
+        if target.isVisible():
+            target.raise_()
+
+    cover_timer = QTimer(app)
+    cover_timer.setInterval(700)
+    cover_timer.timeout.connect(_cover_os_notices)
+    cover_timer.start()
 
     loader = LogoStartupThread(STATIONS_PATH)
     loader.status_changed.connect(splash.set_status)
